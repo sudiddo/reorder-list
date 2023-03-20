@@ -38,7 +38,7 @@ function App() {
     newItems.splice(index, 1)
     newItems.splice(index - 1, 0, item)
     setItems(newItems)
-    animate(index - 1)
+    animate(index)
   }
 
   const moveDown = (index: number) => {
