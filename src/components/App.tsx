@@ -32,16 +32,28 @@ function App() {
   ])
 
   const moveUp = (index: number) => {
+    // Check if the item is already at the top then return
     if (index === 0) return
+    // Create a new array from the items
     const newItems = [...items]
+    // Get the item from the new array
     const item = newItems[index]
+    // Remove the item from the new array
     newItems.splice(index, 1)
+    // Insert the item to the new array
     newItems.splice(index - 1, 0, item)
+    // Set the new array to the items
     setItems(newItems)
+    // Animate the item
     animate(index)
+
+    // Why we need to use new Array instead of just using items?
+    // Because we need to re-render the component
+    // If we just use items, the component will not re-render
   }
 
   const moveDown = (index: number) => {
+    // Check if the item is already at the bottom then return
     if (index === items.length - 1) return
     const newItems = [...items]
     const item = newItems[index]
