@@ -50,6 +50,19 @@ function App() {
     // Why we need to use new Array instead of just using items?
     // Because we need to re-render the component
     // If we just use items, the component will not re-render
+    // Why the item will not re-render?
+    // Because array is a reference type, so when we change the array, the reference will not change
+    // To make the reference change, we need to create a new array
+    // So, we can use the spread operator to create a new array
+
+    // What is reference type?
+    // Reference type is a type that store the reference to the value
+    // For example, array, object, function, etc
+    // When we change the value of the reference type, the reference will not change so we need to create a new reference type to make the reference change
+
+    // what is the difference between reference type and value type?
+    // Value type is a type that store the value directly
+    // For example, string, number, boolean, etc
   }
 
   const moveDown = (index: number) => {
