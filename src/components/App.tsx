@@ -64,7 +64,7 @@ function App() {
     <div className="h-screen w-screen bg-black p-10 text-white">
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-2xl">Reorder List</h1>
-        <div className="mt-10 h-[500px] w-[500px] overflow-y-auto rounded-2xl border border-white">
+        <div className="mt-10 h-[500px] w-[300px] overflow-y-auto rounded-2xl border border-white lg:w-[500px]">
           {items.map((item, index) => (
             <div
               id={`item-${index}`}
