@@ -38,6 +38,7 @@ function App() {
     newItems.splice(index, 1)
     newItems.splice(index - 1, 0, item)
     setItems(newItems)
+    animate(index - 1)
   }
 
   const moveDown = (index: number) => {
@@ -47,6 +48,16 @@ function App() {
     newItems.splice(index, 1)
     newItems.splice(index + 1, 0, item)
     setItems(newItems)
+    animate(index)
+  }
+
+  const animate = (index: number) => {
+    const element = document.getElementById(`item-${index}`)
+    if (!element) return
+    element.classList.add('animate-pulse')
+    setTimeout(() => {
+      element.classList.remove('animate-pulse')
+    }, 2000)
   }
 
   return (
@@ -56,8 +67,9 @@ function App() {
         <div className="mt-10 h-[500px] w-[500px] overflow-y-auto rounded-2xl border border-white">
           {items.map((item, index) => (
             <div
+              id={`item-${index}`}
               key={item}
-              className="m-3 flex items-center justify-between rounded-lg border border-white px-4 py-2 transition-all duration-100 ease-in-out"
+              className="m-3 flex items-center justify-between rounded-lg border border-white px-4 py-2 transition-all duration-1000 ease-in-out"
             >
               <div className="flex w-full flex-row items-center">
                 <div className="mr-2">{index + 1}.</div>
