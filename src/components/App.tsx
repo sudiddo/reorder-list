@@ -76,14 +76,16 @@ function App() {
                 <div className="w-full">{item}</div>
                 <div className="flex flex-row">
                   <button
+                    disabled={index === 0}
                     onClick={() => moveUp(index)}
-                    className="mr-1 rounded-full border bg-white p-1 transition-opacity duration-200 hover:opacity-50"
+                    className="mr-1 rounded-full border bg-white p-1 transition-opacity duration-200 hover:opacity-50 disabled:opacity-40"
                   >
                     <AiOutlineArrowUp color="black" />
                   </button>
                   <button
+                    disabled={index === items.length - 1}
                     onClick={() => moveDown(index)}
-                    className="rounded-full border bg-white p-1 transition-opacity duration-200 hover:opacity-50"
+                    className="rounded-full border bg-white p-1 transition-opacity duration-200 hover:opacity-50 disabled:opacity-40"
                   >
                     <AiOutlineArrowDown color="black" />
                   </button>
